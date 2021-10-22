@@ -3,6 +3,13 @@
 #include <algorithm>
 using namespace std;
 
+// time complexity  = O(n + nlog(n)) ~= O(nlog(n))
+// the time complexity is pretty much fully taken up by the
+// sort algorithm that is used from the c++ standard library
+
+// space complexity = not sure what the sorting algorithm that we are
+// using is, but the space complexity is totally dependent on that and
+// the level of recursion that is happening
 vector<vector<int>> merge(vector<vector<int>> &intervals)
 {
     // sorting the initial intervals

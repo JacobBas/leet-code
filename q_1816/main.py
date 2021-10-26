@@ -2,11 +2,11 @@ import unittest
 
 
 def truncateSentence(s: str, k: int) -> str:
-    end = 0, i = 0
+    end, i = 0, 0
     while i < k:
         end = s.find(" ", end) + 1
         i += 1
-    return s[:end].rstrip() if end != 0 else s
+    return s[:end - 1] if end != 0 else s
 
 
 class Tests(unittest.TestCase):

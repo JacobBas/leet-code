@@ -1,13 +1,5 @@
-# ignoring the executables
+# exe ignores
 main
 
-# Added by cargo
-
-/target
-
-
-# Added by cargo
-#
-# already existing elements were commented out
-
-#/target
+# python ignores
+__pycache__/

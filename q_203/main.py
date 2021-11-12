@@ -46,14 +46,35 @@ def arrayFromLinkedList(ll: Optional[ListNode]) -> str:
 
 class Tests(unittest.TestCase):
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        """
+        time complexity: O(n) since we are only checking each object once
+        space complexity: constant space complexity
+        """
+
+        # handling the edge case of the first n values in the linked list
+        # being equal to val. In this case we want to keep shifting the
+        # linked list over until we get to a point where the linked list
+        # starts with a number that is not equal to the val.
+        while head and head.val == val:
+            head = head.next
+
+        # we finish off be removing values that show up in the middle
+        # of the linked list.
         head_iter = head
         while head_iter:
-            print(head_iter.val)
+            # handling the case where we have consecutive values
+            # showing up within the linked list
+            while head_iter.next and head_iter.next.val == val:
+                head_iter.next = head_iter.next.next
+
+            # iterating to the next value within the linked list
             head_iter = head_iter.next
+
+        # returning the final list
         return head
 
     def test1(self):
-        head = linkedListFromArray([1, 2, 6, 3, 4, 5, 6])
+        head = linkedListFromArray([1, 2, 6, 6, 3, 4, 5, 6])
         val = 6
         resp = self.removeElements(head, val)
         output = [1, 2, 3, 4, 5]
@@ -71,6 +92,13 @@ class Tests(unittest.TestCase):
         val = 7
         resp = self.removeElements(head, val)
         output = []
+        self.assertEqual(arrayFromLinkedList(resp), output)
+
+    def test4(self):
+        head = linkedListFromArray([1, 7, 7, 7])
+        val = 7
+        resp = self.removeElements(head, val)
+        output = [1]
         self.assertEqual(arrayFromLinkedList(resp), output)
 
 

@@ -37,11 +37,7 @@ def arrayFromLinkedList(ll: Optional[ListNode]) -> str:
     Returns:
         str: string representation of a linked list
     """
-    if not ll:
-        return []
-
-    arr = [ll.val]
-    ll = ll.next
+    arr = []
     while ll:
         arr.append(ll.val)
         ll = ll.next

@@ -1,7 +1,6 @@
 import unittest
 import functools
 
-
 class Problem(unittest.TestCase):
     def factorial(self, n: int) -> int:
         return functools.reduce(lambda x, y: x*y, range(1, n + 1), 1)

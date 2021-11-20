@@ -19,7 +19,7 @@ const init_py = `import unittest
 
 
 class Tests(unittest.TestCase):
-	def mainFunction(input: type) -> type:
+	def mainFunction(self, input: type) -> type:
 		pass
 
 	def test1(self):

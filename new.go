@@ -3,6 +3,9 @@
 // * script. Further enhancements are going to be to create init scripts
 // * for other languages such as go, rust, and c++.
 
+// * it might also be worthwhile to rewrite this within a different langauge
+// * since this executable file is 1.9MB large for very simple functionality.
+
 package main
 
 import (

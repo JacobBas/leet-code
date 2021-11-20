@@ -3,3 +3,6 @@ main
 
 # python ignores
 __pycache__/
+
+# general ignores
+.vscode/
